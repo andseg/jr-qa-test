@@ -1,0 +1,332 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 10,
+    "passes": 10,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-07-24T16:29:16.806Z",
+    "end": "2023-07-24T16:29:32.501Z",
+    "duration": 15695,
+    "testsRegistered": 10,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "04940103-f5d2-463b-a910-345074617df8",
+      "title": "",
+      "fullFile": "cypress\\e2e\\spec.cy.js",
+      "file": "cypress\\e2e\\spec.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6933bffa-5ba6-4d0a-9495-4ef60b3cbd03",
+          "title": "Requisições de Férias ou Folgas",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "tem título na página",
+              "fullTitle": "Requisições de Férias ou Folgas tem título na página",
+              "timedOut": null,
+              "duration": 422,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.title().should('contain', 'Fuerza Space');",
+              "err": {},
+              "uuid": "95d1f5e1-7ef3-4c2a-81a7-4053b45e76d7",
+              "parentUUID": "6933bffa-5ba6-4d0a-9495-4ef60b3cbd03",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [
+            {
+              "uuid": "67b14646-26e9-478d-86bd-30c0f2b8db1c",
+              "title": "Aprovar",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "aprovar primeira solicitação escrevendo mensagens",
+                  "fullTitle": "Requisições de Férias ou Folgas Aprovar aprovar primeira solicitação escrevendo mensagens",
+                  "timedOut": null,
+                  "duration": 4012,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('tbody > tr').first().find('button').first().click();\ncy.get('#message_collaborator').invoke('val', LOREM_150);\ncy.get('#message_manager').type(LOREM_150);\ncy.get('form').find('button[type=\"submit\"]').click();\ncy.wait('@reqAprovarReprovar').then(({\n  response\n}) => {\n  expect(response.statusCode).to.eq(200);\n  expect(response.body.message_collaborator).to.eq(LOREM_150);\n  expect(response.body.message_manager).to.eq(LOREM_150);\n  expect(response.body.status).to.eq('APPROVED');\n});\ncy.get('tbody > tr').first().children('td').eq(2).should('contain', 'APPROVED');",
+                  "err": {},
+                  "uuid": "05a9630a-0711-48c2-95e0-c5af1f836af6",
+                  "parentUUID": "67b14646-26e9-478d-86bd-30c0f2b8db1c",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "aprovar primeira solicitação escrevendo para colaborador",
+                  "fullTitle": "Requisições de Férias ou Folgas Aprovar aprovar primeira solicitação escrevendo para colaborador",
+                  "timedOut": null,
+                  "duration": 807,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('tbody > tr').first().find('button').first().click();\ncy.get('#message_collaborator').invoke('val', LOREM_150);\ncy.get('form').find('button[type=\"submit\"]').click();\ncy.wait('@reqAprovarReprovar').then(({\n  response\n}) => {\n  expect(response.statusCode).to.eq(200);\n  expect(response.body.message_collaborator).to.eq(LOREM_150);\n  expect(response.body.message_manager).to.eq('');\n  expect(response.body.status).to.eq('APPROVED');\n});\ncy.get('tbody > tr').first().children('td').eq(2).should('contain', 'APPROVED');",
+                  "err": {},
+                  "uuid": "4a206fa3-b198-4c36-8379-18431e43d914",
+                  "parentUUID": "67b14646-26e9-478d-86bd-30c0f2b8db1c",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "aprovar primeira solicitação escrevendo para gestor",
+                  "fullTitle": "Requisições de Férias ou Folgas Aprovar aprovar primeira solicitação escrevendo para gestor",
+                  "timedOut": null,
+                  "duration": 881,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('tbody > tr').first().find('button').first().click();\ncy.get('#message_manager').invoke('val', LOREM_150);\ncy.get('form').find('button[type=\"submit\"]').click();\ncy.wait('@reqAprovarReprovar').then(({\n  response\n}) => {\n  expect(response.statusCode).to.eq(200);\n  expect(response.body.message_collaborator).to.eq('');\n  expect(response.body.message_manager).to.eq(LOREM_150);\n  expect(response.body.status).to.eq('APPROVED');\n});\ncy.get('tbody > tr').first().children('td').eq(2).should('contain', 'APPROVED');",
+                  "err": {},
+                  "uuid": "a94c871d-a163-4fc2-b186-7ca2f96bb676",
+                  "parentUUID": "67b14646-26e9-478d-86bd-30c0f2b8db1c",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "aprovar primeira solicitação sem mensagens",
+                  "fullTitle": "Requisições de Férias ou Folgas Aprovar aprovar primeira solicitação sem mensagens",
+                  "timedOut": null,
+                  "duration": 823,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('tbody > tr').first().find('button').first().click();\ncy.get('form').find('button[type=\"submit\"]').click();\ncy.wait('@reqAprovarReprovar').then(({\n  response\n}) => {\n  expect(response.statusCode).to.eq(200);\n  expect(response.body.message_collaborator).to.eq('');\n  expect(response.body.message_manager).to.eq('');\n  expect(response.body.status).to.eq('APPROVED');\n});\ncy.get('tbody > tr').first().children('td').eq(2).should('contain', 'APPROVED');",
+                  "err": {},
+                  "uuid": "4e25178b-8ac4-4f50-9ea7-541cd3163977",
+                  "parentUUID": "67b14646-26e9-478d-86bd-30c0f2b8db1c",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "05a9630a-0711-48c2-95e0-c5af1f836af6",
+                "4a206fa3-b198-4c36-8379-18431e43d914",
+                "a94c871d-a163-4fc2-b186-7ca2f96bb676",
+                "4e25178b-8ac4-4f50-9ea7-541cd3163977"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 6523,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "90852008-aeb1-47d4-aae4-969e4b603629",
+              "title": "Reprovar",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "reprovar primeira solicitação escrevendo mensagens",
+                  "fullTitle": "Requisições de Férias ou Folgas Reprovar reprovar primeira solicitação escrevendo mensagens",
+                  "timedOut": null,
+                  "duration": 3018,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('tbody > tr').first().find('button').last().click();\ncy.get('#message_collaborator').invoke('val', LOREM_150);\ncy.get('#message_manager').type(LOREM_150);\ncy.get('form').find('button[type=\"submit\"]').click();\ncy.wait('@reqAprovarReprovar').then(({\n  response\n}) => {\n  expect(response.statusCode).to.eq(200);\n  expect(response.body.message_collaborator).to.eq(LOREM_150);\n  expect(response.body.message_manager).to.eq(LOREM_150);\n  expect(response.body.status).to.eq('REPROVED');\n});\ncy.get('tbody > tr').first().children('td').eq(2).should('contain', 'REPROVED');",
+                  "err": {},
+                  "uuid": "054cd749-89dc-4830-9d92-e1d6e5de29e3",
+                  "parentUUID": "90852008-aeb1-47d4-aae4-969e4b603629",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "reprovar primeira solicitação escrevendo para colaborador",
+                  "fullTitle": "Requisições de Férias ou Folgas Reprovar reprovar primeira solicitação escrevendo para colaborador",
+                  "timedOut": null,
+                  "duration": 796,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('tbody > tr').first().find('button').last().click();\ncy.get('#message_collaborator').invoke('val', LOREM_150);\ncy.get('form').find('button[type=\"submit\"]').click();\ncy.wait('@reqAprovarReprovar').then(({\n  response\n}) => {\n  expect(response.statusCode).to.eq(200);\n  expect(response.body.message_collaborator).to.eq(LOREM_150);\n  expect(response.body.message_manager).to.eq('');\n  expect(response.body.status).to.eq('REPROVED');\n});\ncy.get('tbody > tr').first().children('td').eq(2).should('contain', 'REPROVED');",
+                  "err": {},
+                  "uuid": "5174fef9-0397-4249-83f5-4a7a6448b5d7",
+                  "parentUUID": "90852008-aeb1-47d4-aae4-969e4b603629",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "reprovar primeira solicitação escrevendo para gestor",
+                  "fullTitle": "Requisições de Férias ou Folgas Reprovar reprovar primeira solicitação escrevendo para gestor",
+                  "timedOut": null,
+                  "duration": 1506,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('tbody > tr').first().find('button').last().click();\ncy.get('#message_manager').invoke('val', LOREM_150);\ncy.get('form').find('button[type=\"submit\"]').click();\ncy.wait('@reqAprovarReprovar').then(({\n  response\n}) => {\n  expect(response.statusCode).to.eq(200);\n  expect(response.body.message_collaborator).to.eq('');\n  expect(response.body.message_manager).to.eq(LOREM_150);\n  expect(response.body.status).to.eq('REPROVED');\n});\ncy.get('tbody > tr').first().children('td').eq(2).should('contain', 'REPROVED');",
+                  "err": {},
+                  "uuid": "029a976d-145c-4bcc-a48d-92c874161a9a",
+                  "parentUUID": "90852008-aeb1-47d4-aae4-969e4b603629",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "reprovar primeira solicitação sem mensagens",
+                  "fullTitle": "Requisições de Férias ou Folgas Reprovar reprovar primeira solicitação sem mensagens",
+                  "timedOut": null,
+                  "duration": 1176,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('tbody > tr').first().find('button').last().click();\ncy.get('form').find('button[type=\"submit\"]').click();\ncy.wait('@reqAprovarReprovar').then(({\n  response\n}) => {\n  expect(response.statusCode).to.eq(200);\n  expect(response.body.message_collaborator).to.eq('');\n  expect(response.body.message_manager).to.eq('');\n  expect(response.body.status).to.eq('REPROVED');\n});\ncy.get('tbody > tr').first().children('td').eq(2).should('contain', 'REPROVED');",
+                  "err": {},
+                  "uuid": "f12cfdbb-942a-44a9-b5a6-40857bcd84cf",
+                  "parentUUID": "90852008-aeb1-47d4-aae4-969e4b603629",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "054cd749-89dc-4830-9d92-e1d6e5de29e3",
+                "5174fef9-0397-4249-83f5-4a7a6448b5d7",
+                "029a976d-145c-4bcc-a48d-92c874161a9a",
+                "f12cfdbb-942a-44a9-b5a6-40857bcd84cf"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 6496,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "87641419-924e-4e3c-a8b2-df83eb0d2c0e",
+              "title": "Console",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "sem erro no console",
+                  "fullTitle": "Requisições de Férias ou Folgas Console sem erro no console",
+                  "timedOut": null,
+                  "duration": 148,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('@consoleError').should('have.callCount', 0);",
+                  "err": {},
+                  "uuid": "b4d095e0-ebb0-46d7-816f-5aa0f81947cc",
+                  "parentUUID": "87641419-924e-4e3c-a8b2-df83eb0d2c0e",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "b4d095e0-ebb0-46d7-816f-5aa0f81947cc"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 148,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [
+            "95d1f5e1-7ef3-4c2a-81a7-4053b45e76d7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 422,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
